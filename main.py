@@ -20,6 +20,10 @@ connection = pymysql.connect(
     db=DB_NAME
 )
 
+@app.route('/', methods=['GET'])
+def home():
+    return 'Hello, your LINE Bot is running!'
+
 
 @app.route('/callback', methods=['POST'])
 def callback():
@@ -43,6 +47,7 @@ def callback():
 
 if __name__ == '__main__':
     app.run()
+
 
 
 
